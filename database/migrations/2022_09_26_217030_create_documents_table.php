@@ -17,10 +17,6 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->unsignedBigInteger('campaign_id');
-            $table->foreign('campaign_id')
-                ->references('id')
-                ->on('campaigns');
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')

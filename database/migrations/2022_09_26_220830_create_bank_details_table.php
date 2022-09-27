@@ -20,17 +20,15 @@ return new class extends Migration
             $table->unsignedBigInteger('payment_method_id');
             $table->foreign('payment_method_id')
                 ->references('id')
-                ->on('payment_methods');
-                
-            $table->unsignedBigInteger('donor_id');
-            $table->foreign('donor_id')
+                ->on('payment_methods')
+            ;
+            
+            $table->unsignedBigInteger('Needie_id');
+            $table->foreign('Needie_id')
                 ->references('id')
-                ->on('donors');
-
-            $table->unsignedBigInteger('needie_id');
-            $table->foreign('needie_id')
-                ->references('id')
-                ->on('needies');
+                ->on('Needies')
+            ;
+            
         });
     }
 

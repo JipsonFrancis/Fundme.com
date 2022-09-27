@@ -13,21 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('individual_campaigns', function (Blueprint $table) {
+        Schema::create('campaign_documents', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
 
-            $table->unsignedBigInteger('needie_id');
-            $table->foreign('needie_id')
+            $table->unsignedBigInteger('campaign_id');
+            $table->foreign('campaign_id')
                 ->references('id')
-                ->on('needies')
-            ;
-
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')
-                ->references('id')
-                ->on('categories')
-            ;
+                ->on('campaigns');        
         });
     }
 
@@ -38,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('individual_campaigns');
+        Schema::dropIfExists('campaign_documents');
     }
 };

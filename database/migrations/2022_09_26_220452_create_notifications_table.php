@@ -16,16 +16,6 @@ return new class extends Migration
         Schema::create('notifications', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-
-            // $table->unsignedBigInteger('campaign_id');
-            // $table->foreign('campaign_id')
-            //     ->references('id')
-            //     ->on('campaigns');
-
-            // $table->unsignedBigInteger('user_id');
-            // $table->foreign('user_id')
-            //     ->references('id')
-            //     ->on('users');
             
                 $table->unsignedBigInteger('transaction_id');
             $table->foreign('transaction_id')

@@ -21,6 +21,11 @@ return new class extends Migration
             $table->foreign('social_worker_id')
                 ->references('id')
                 ->on('social_workers');
+
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('categories');
         });
     }
 
