@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
-            $table->unsignedBigInteger('campaign_id');
-            $table->foreign('campaign_id')
+            $table->unsignedBigInteger('group_campaign_id');
+            $table->foreign('group_campaign_id')
                 ->references('id')
-                ->on('campaigns');        
+                ->on('group_campaigns');        
         });
     }
 
